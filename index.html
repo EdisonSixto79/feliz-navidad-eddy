@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Navidad</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #1e3c72, #2a5298);
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        a {
+            text-decoration: none;
+            color: #ffd700;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        a:focus {
+            outline: 2px solid #ffd700;
+        }
+        .tree {
+            position: relative;
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid green;
+        }
+        .tree:before,
+        .tree:after {
+            content: '';
+            position: absolute;
+            left: -50px;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+        }
+        .tree:before {
+            top: -70px;
+            border-bottom: 70px solid green;
+        }
+        .tree:after {
+            top: -140px;
+            border-bottom: 70px solid green;
+        }
+        .star {
+            position: absolute;
+            top: -150px;
+            left: -10px;
+            width: 20px;
+            height: 20px;
+            background-color: gold;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        .lights {
+            position: absolute;
+            top: -140px;
+            left: 0;
+            width: 0;
+            height: 0;
+        }
+        .lights span {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: red;
+            border-radius: 50%;
+            animation: blink 2s infinite;
+        }
+        .lights span:nth-child(2) { top: 20px; left: -20px; background-color: yellow; }
+        .lights span:nth-child(3) { top: 40px; left: 10px; background-color: blue; }
+        .lights span:nth-child(4) { top: 60px; left: -30px; background-color: pink; }
+        .lights span:nth-child(5) { top: 80px; left: 20px; background-color: orange; }
+
+        @keyframes blink {
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#tree">Feliz Navidad de parte de Eddy Vega Cortés</a>
+    <div id="tree" class="tree">
+        <div class="star"></div>
+        <div class="lights">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>
