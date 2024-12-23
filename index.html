@@ -8,87 +8,80 @@
         body {
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: 'Arial', sans-serif;
             background: linear-gradient(to bottom, #1e3c72, #2a5298);
-            font-family: Arial, sans-serif;
             color: white;
+            text-align: center;
         }
-        a {
-            text-decoration: none;
+        h1 {
+            font-size: 3rem;
+            margin-top: 50px;
             color: #ffd700;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        a:focus {
-            outline: 2px solid #ffd700;
+            text-shadow: 2px 2px 5px #000;
         }
         .tree {
-            position: relative;
+            margin: 50px auto;
             width: 0;
             height: 0;
-            border-left: 50px solid transparent;
-            border-right: 50px solid transparent;
-            border-bottom: 100px solid green;
+            position: relative;
         }
-        .tree:before,
-        .tree:after {
-            content: '';
+        .tree .triangle {
             position: absolute;
-            left: -50px;
-            border-left: 50px solid transparent;
-            border-right: 50px solid transparent;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
         }
-        .tree:before {
-            top: -70px;
-            border-bottom: 70px solid green;
+        .triangle:nth-child(1) {
+            border-bottom: 120px solid green;
+            top: 0;
         }
-        .tree:after {
-            top: -140px;
-            border-bottom: 70px solid green;
+        .triangle:nth-child(2) {
+            border-bottom: 140px solid green;
+            top: 90px;
+        }
+        .triangle:nth-child(3) {
+            border-bottom: 160px solid green;
+            top: 200px;
         }
         .star {
             position: absolute;
-            top: -150px;
-            left: -10px;
-            width: 20px;
-            height: 20px;
-            background-color: gold;
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-        }
-        .lights {
-            position: absolute;
-            top: -140px;
-            left: 0;
-            width: 0;
-            height: 0;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: gold;
         }
         .lights span {
             position: absolute;
-            width: 6px;
-            height: 6px;
+            width: 10px;
+            height: 10px;
             background-color: red;
             border-radius: 50%;
             animation: blink 2s infinite;
         }
-        .lights span:nth-child(2) { top: 20px; left: -20px; background-color: yellow; }
-        .lights span:nth-child(3) { top: 40px; left: 10px; background-color: blue; }
-        .lights span:nth-child(4) { top: 60px; left: -30px; background-color: pink; }
-        .lights span:nth-child(5) { top: 80px; left: 20px; background-color: orange; }
+        .lights span:nth-child(2) { top: 80px; left: 45%; background-color: yellow; animation-delay: 0.5s; }
+        .lights span:nth-child(3) { top: 130px; left: 55%; background-color: blue; animation-delay: 1s; }
+        .lights span:nth-child(4) { top: 190px; left: 40%; background-color: pink; animation-delay: 1.5s; }
+        .lights span:nth-child(5) { top: 250px; left: 60%; background-color: orange; animation-delay: 2s; }
 
         @keyframes blink {
             50% { opacity: 0.5; }
         }
+        footer {
+            margin-top: 50px;
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
     </style>
 </head>
 <body>
-    <a href="#tree">Feliz Navidad de parte de Eddy Vega Cortés</a>
-    <div id="tree" class="tree">
-        <div class="star"></div>
+    <h1>Feliz Navidad y Próspero Año Nuevo</h1>
+    <div class="tree">
+        <div class="star">★</div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
+        <div class="triangle"></div>
         <div class="lights">
             <span></span>
             <span></span>
@@ -97,5 +90,7 @@
             <span></span>
         </div>
     </div>
+    <footer>Con cariño, Edison Vega</footer>
 </body>
 </html>
+
